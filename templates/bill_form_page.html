@@ -8,7 +8,7 @@
 <body>
 <h2>The Bill Form</h2>
 <p>Fill in the form and click the button to get results.</p>
-<form action="/results" method="post">
+<form action="/bill_form_page" method="post">
     {{billform.amount.label}} {{billform.amount}}
     <br>
     {{billform.period.label}} {{billform.period}}
@@ -26,6 +26,11 @@
     {{billform.days_in_house2.label}} {{billform.days_in_house2}}
     <br>
     {{billform.button}}
+    <br>
+    {% if result %}                         <!-- jinja 2 if statement, hide "pays" str until result = True, post method variable    -->
+    {{name1}} pays {{amount1}} <br>         <!-- copied from `results.html` page    -->
+    {{name2}} pays {{amount2}}
+    {% endif %}
 </form>
 </body>
 </html>
